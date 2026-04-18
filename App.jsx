@@ -30,6 +30,13 @@ import DashboardUpdates from "./pages/Dashboardupdates";
 import DashboardPrivacy from "./pages/Dashboardprivacy";
 import DashboardAnalytics from "./pages/Dashboardanalytics";
 import DashboardDelegation from "./pages/Dashboarddelegation";
+import Admin from "./pages/Admin";
+import AdminCompanies from "./pages/Admincompanies";
+import AdminPeople from "./pages/Adminpeople";
+import AdminInvestors from "./pages/Admininvestors";
+import AdminOrganizations from "./pages/Adminorganizations";
+import AdminEvents from "./pages/Adminevents";
+import AdminUsers from "./pages/Adminusers";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
@@ -74,6 +81,14 @@ function App() {
           <Route path="/dashboard/privacy" element={<DashboardPrivacy />} />
           <Route path="/dashboard/analytics" element={<DashboardAnalytics />} />
           <Route path="/dashboard/delegation" element={<DashboardDelegation />} />
+
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/companies" element={<AdminCompanies />} />
+          <Route path="/admin/people" element={<AdminPeople />} />
+          <Route path="/admin/investors" element={<AdminInvestors />} />
+          <Route path="/admin/organizations" element={<AdminOrganizations />} />
+          <Route path="/admin/events" element={<AdminEvents />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

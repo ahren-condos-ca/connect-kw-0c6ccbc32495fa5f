@@ -45,6 +45,7 @@ export default function Layout({ children }) {
       { to: "/analytics", label: "Analytics", icon: AdjustmentsHorizontalIcon },
       { to: "/recommendations", label: "Recommendations", icon: StarIcon },
       { to: "/dashboard", label: "Dashboard", icon: UserCircleIcon, badge: null },
+      { to: "/admin", label: "Admin", icon: Cog6ToothIcon },
       { to: "/about", label: "About", icon: BookmarkIcon },
       { to: "/contact", label: "Contact", icon: EnvelopeIcon },
       { to: "/login", label: "Login", icon: UserIcon },
