@@ -1,0 +1,82 @@
+@import "tailwindcss";
+/* Design tokens mapped to CSS variables for global theming */
+:root {
+  /* Brand colors (dark mode default) */
+  --color-primary: #4F7DFF;          /* Vibrant blue for CTAs */
+  --color-primary-light: #3358CC;    /* Darker blue for hover/pressed */
+  --color-secondary: #2FB7A3;        /* Teal for secondary actions */
+  --color-secondary-light: #1F8577;  /* Deeper teal variant */
+  --color-accent: #7B5DFF;           /* Purple accent for highlights */
+  --color-accent-light: #5A3ED6;     /* Darker purple variant */
+
+  /* Neutrals (dark theme baseline) */
+  --color-background: #0B0F14;       /* Page background */
+  --color-surface: #121826;          /* Surfaces/cards */
+  --color-text: #E6ECF5;             /* Primary text on dark */
+  --color-border: #1E2635;           /* Borders/dividers */
+  --color-ring: #1E2635;             /* Focus rings */
+
+  /* Shadows */
+  --shadow-color: 79, 125, 255;      /* RGB of primary for shadow tint */
+
+  /* Gradients (generate from assigned brand colors) */
+  --gradient-primary-accent: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  --gradient-primary-secondary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+/* Light theme overrides */
+:root[data-theme='light'] {
+  --color-background: #F5F7FA;   /* from tokens[0].light */
+  --color-surface: #EAEFF5;      /* from tokens[1].light */
+  --color-text: #1B2430;         /* from tokens[3].light */
+  --color-border: #D5DBE3;       /* from tokens[2].light */
+  --color-ring: #D5DBE3;         /* light neutral ring */
+}
+
+/* Global element resets and base styles */
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+  border-radius: 4px;
+}
+
+/* Utility helpers that may be reused */
+.shadow-primary {
+  box-shadow: 0 10px 20px rgba(var(--shadow-color), 0.25);
+}
+
+.glass-surface {
+  background: color-mix(in oklab, var(--color-surface) 92%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+/***** Component tokens *****/
+/**** Inputs ****/
+.input-focus-primary:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
